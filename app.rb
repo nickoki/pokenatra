@@ -25,10 +25,14 @@ get "/pokedex/add" do
 	erb :"pokemon/add"
 end
 
-# READ individual pkmn
 get "/pokedex/:name" do
 	@pokemon = Pokemon.find_by name: params[:name].capitalize
 	erb :"pokemon/show"
+end
+
+get "/pokedex/:name/edit" do
+	@pokemon = Pokemon.find_by name: params[:name].capitalize
+	erb :"pokemon/edit"
 end
 
 # CREATE
@@ -38,6 +42,11 @@ post "/pokedex" do
 end
 
 # UPDATE
+put "/pokedex/:name" do
+	@pokemon = Pokemon.find_by name: params[:name].capitalize
+	@pokemon.update params[:pkmn]
+	redirect "/pokedex/#{@pokemon.name}"
+end
 
 # DELETE
 delete "/pokedex/:name" do

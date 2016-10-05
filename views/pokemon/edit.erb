@@ -1,0 +1,18 @@
+<h2>Edit Pokemon</h2>
+<form action="/pokedex/<%= @pokemon.name %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+
+	<label>Name</label>
+	<input type="text" name="pkmn[name]" value="<%= @pokemon.name %>" />
+
+	<label>Type</label>
+	<input type="text" name="pkmn[poke_type]" value="<%= @pokemon.poke_type %>" />
+
+	<label>CP</label>
+	<input type="text" name="pkmn[cp]" value="<%= @pokemon.cp %>" />
+
+	<label>Image</label>
+	<input type="text" name="pkmn[img_url]" value="<%= @pokemon.img_url %>" />
+
+	<button type="submit">Submit</button>
+</form>
