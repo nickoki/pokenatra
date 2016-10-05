@@ -10,19 +10,25 @@ require_relative "models/pokemon"
 
 
 
-# Routes
+# ROUTES
 get "/" do
 	erb :"pokemon/index"
 end
 
-# Read
+# READ all pokemon
 get "/pokedex" do
 	@pokemon = Pokemon.all
 	erb :"pokemon/pokedex"
 end
 
-# Create
+# READ individual pkmn
+get "/pokedex/:name" do
+	@pkmn = Pokemon.find_by name: params[:name].capitalize
+	erb :"pokemon/show"
+end
 
-# Update
+# CREATE
 
-# Delete
+# UPDATE
+
+# DELETE
