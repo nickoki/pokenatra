@@ -40,3 +40,8 @@ end
 # UPDATE
 
 # DELETE
+delete "/pokedex/:name" do
+	@pokemon = Pokemon.find_by name: params[:name].capitalize
+	@pokemon.destroy
+	redirect "/pokedex"
+end

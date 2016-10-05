@@ -4,3 +4,11 @@
 <h2><%= @pokemon.cp %></h2>
 <h2><%= @pokemon.poke_type %></h2>
 <img src="<%= @pokemon.img_url %>" />
+
+<form action="/pokedex/<%= @pokemon.name %>" method="post">
+	<input type="hidden" name="_method" value="delete" />
+
+	<button type="submit">Delete <%= @pokemon.name %></button>
+</form>
+
+<p><a href="/pokedex">Return to Pokedex</a></p>
