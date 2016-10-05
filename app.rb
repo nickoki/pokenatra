@@ -15,19 +15,27 @@ get "/" do
 	erb :"pokemon/index"
 end
 
-# READ all pokemon
+# READ
 get "/pokedex" do
 	@pokemon = Pokemon.all
 	erb :"pokemon/pokedex"
 end
 
+get "/pokedex/add" do
+	erb :"pokemon/add"
+end
+
 # READ individual pkmn
 get "/pokedex/:name" do
-	@pkmn = Pokemon.find_by name: params[:name].capitalize
+	@pokemon = Pokemon.find_by name: params[:name].capitalize
 	erb :"pokemon/show"
 end
 
 # CREATE
+post "/pokedex" do
+	@pokemon = Pokemon.create params[:pokemon]
+	redirect "/pokedex"
+end
 
 # UPDATE
 
