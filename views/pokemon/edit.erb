@@ -1,18 +1,22 @@
-<h2>Edit Pokemon</h2>
-<form action="/pokedex/<%= @pokemon.name %>" method="post">
-	<input type="hidden" name="_method" value="put" />
+<h1>Edit Pokemon</h1>
+<div class="pokemon-list">
+		<div class="pokemon-card big">
+		<form action="/pokedex/<%= @pokemon.name %>" method="post">
+			<input type="hidden" name="_method" value="put" />
 
-	<label>Name</label>
-	<input type="text" name="pkmn[name]" value="<%= @pokemon.name %>" />
+			<label>Name</label>
+			<input type="text" name="pkmn[name]" value="<%= @pokemon.name %>" />
 
-	<label>Type</label>
-	<input type="text" name="pkmn[poke_type]" value="<%= @pokemon.poke_type %>" />
+			<label>Type</label>
+			<input type="text" name="pkmn[poke_type]" value="<%= @pokemon.poke_type %>" />
 
-	<label>CP</label>
-	<input type="text" name="pkmn[cp]" value="<%= @pokemon.cp %>" />
+			<label>CP</label>
+			<input type="text" name="pkmn[cp]" value="<%= @pokemon.cp %>" />
 
-	<label>Image</label>
-	<input type="text" name="pkmn[img_url]" value="<%= @pokemon.img_url %>" />
+			<label>Image</label>
+			<input type="text" name="pkmn[img_url]" value="<%= @pokemon.img_url %>" />
 
-	<button type="submit">Submit</button>
+			<button type="submit" class="pokemon-button">Confirm</button>
+		</div>
+	</div>
 </form>

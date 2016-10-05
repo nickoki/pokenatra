@@ -52,6 +52,20 @@ a {
 	color: #000;
 }
 
+form {
+	margin: 2em 0;
+}
+
+form input,
+form select {
+	display: block;
+	margin: 1em auto;
+	padding: 0.5em;
+	text-align: center;
+}
+
+form
+
 button {
 	box-sizing: content-box;
 }
