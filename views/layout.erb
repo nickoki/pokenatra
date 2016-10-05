@@ -4,9 +4,22 @@
 		<meta charset="utf-8">
 		<title>Ruby Lab: Pokemon + Sinatra</title>
 		<link rel="stylesheet" href="/css/pokestyle.css">
+		<link rel="stylesheet" href="/css/holy-grail.css">
 		<link rel="stylesheet" href="/css/style.css">
 	</head>
-	<body>
-		<%= yield %>
+	<body class="holy-grail">
+		<header>
+			<ul>
+				<li><a href="/pokedex">Home</a></li>
+				<li><a href="/pokedex/add">Add New Pokemon</a></li>
+			</ul>
+		</header>
+		<div class="holy-grail-body">
+			<main class="holy-grail-content">
+				<%= yield %>
+			</main>
+			<nav class="holy-grail-nav"></nav>
+			<aside class="holy-grail-ads"></aside>
+		</div><!-- end holy-grail-body -->
 	</body>
 </html>

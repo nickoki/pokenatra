@@ -1,8 +1,17 @@
 <h2>Welcome to the Pokedex</h2>
 
-<ul>
+<div class="pokemon-list">
 	<% @pokemon.each do |pkmn| %>
-	<li><a href="/pokedex/<%= pkmn.name %>"><%= pkmn.name %></a></li>
+	<div class="pokemon-card">
+		<div class="pokemon-title">
+			<a href="/pokedex/<%= pkmn.name %>"><%= pkmn.name %></a>
+		</div>
+		<div class="pokemon-image">
+			<a href="/pokedex/<%= pkmn.name %>"><img src="<%= pkmn.img_url %>" width="120px" /></a>
+		</div>
+		<div class="pokemon-footer">
+			<a href="/pokedex/<%= pkmn.name %>/edit" class="pokemon-button">Edit</a>
+		</div>
+	</div>
 	<% end %>
-</ul>
-<a href="/pokedex/add">Add New Pokemon</a>
+</div>
