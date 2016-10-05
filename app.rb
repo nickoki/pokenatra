@@ -14,3 +14,15 @@ require_relative "models/pokemon"
 get "/" do
 	erb :"pokemon/index"
 end
+
+# Read
+get "/pokedex" do
+	@pokemon = Pokemon.all
+	erb :"pokemon/pokedex"
+end
+
+# Create
+
+# Update
+
+# Delete
