@@ -1,14 +1,21 @@
-<h2>Show indiv Pokemon</h2>
+<h1>Pokedex Entry</h1>
 
-<h2><%= @pokemon.name %></h2>
-<h2><%= @pokemon.cp %></h2>
-<h2><%= @pokemon.poke_type %></h2>
-<img src="<%= @pokemon.img_url %>" />
-
-<form action="/pokedex/<%= @pokemon.name %>" method="post">
-	<input type="hidden" name="_method" value="delete" />
-
-	<button type="submit">Delete <%= @pokemon.name %></button>
-</form>
-
-<p><a href="/pokedex">Return to Pokedex</a></p>
+<div class="pokemon-list">
+	<div class="pokemon-card big">
+		<div class="pokemon-title">
+			<span><%= @pokemon.name %></span>
+			<span class="pokemon-type"><%= @pokemon.poke_type %></span>
+			<span><%= @pokemon.cp %></span>
+		</div>
+		<div class="pokemon-image">
+			<img src="<%= @pokemon.img_url %>" />
+		</div>
+		<div class="pokemon-footer">
+			<a href="/pokedex/<%= @pokemon.name %>/edit" class="pokemon-button">Edit</a>
+			<form action="/pokedex/<%= @pokemon.name %>" method="post">
+				<input type="hidden" name="_method" value="delete" />
+				<button type="submit" class="pokemon-button warning">Delete <%= @pokemon.name %></button>
+			</form>
+		</div>
+	</div>
+</div>

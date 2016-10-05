@@ -1,4 +1,4 @@
-<h2>Welcome to the Pokedex</h2>
+<h1>Pokedex</h1>
 
 <div class="pokemon-list">
 	<% @pokemon.each do |pkmn| %>
@@ -7,9 +7,10 @@
 			<a href="/pokedex/<%= pkmn.name %>"><%= pkmn.name %></a>
 		</div>
 		<div class="pokemon-image">
-			<a href="/pokedex/<%= pkmn.name %>"><img src="<%= pkmn.img_url %>" width="120px" /></a>
+			<a href="/pokedex/<%= pkmn.name %>"><img src="<%= pkmn.img_url %>" /></a>
 		</div>
 		<div class="pokemon-footer">
+			<a href="/pokedex/<%= pkmn.name %>" class="pokemon-button primary">View</a>
 			<a href="/pokedex/<%= pkmn.name %>/edit" class="pokemon-button">Edit</a>
 		</div>
 	</div>
